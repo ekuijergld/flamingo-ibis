@@ -3,7 +3,9 @@
 DROP VIEW "IBIS".v_grootste_10_bedrijven_op_terrein;
 
 CREATE OR REPLACE VIEW "IBIS".v_grootste_10_bedrijven_op_terrein AS
- SELECT bedrijventerrein.ibis_id AS terreinid,
+ SELECT 
+    bedrijventerrein.gt_pkey,
+    bedrijventerrein.ibis_id AS terreinid,
     bedrijventerrein.rin_nr,
     v_grootste_10_bedrijven_op_rin_nr.naam,
     v_grootste_10_bedrijven_op_rin_nr.activiteit,
