@@ -9,10 +9,8 @@ CREATE OR REPLACE VIEW "IBIS".v_actuele_kavels AS
     bedrijvenkavels.datummutatie,
     bedrijvenkavels.terreinid,
     bedrijvenkavels.status,
-    bedrijvenkavels.milieuwet,
     bedrijvenkavels.uitgegevenaan,
     bedrijvenkavels.eerstejaaruitgifte,
-    bedrijvenkavels.faseveroudering,
     bedrijvenkavels.gemeentenaam,
     bedrijvenkavels.geom
    FROM bedrijvenkavels
