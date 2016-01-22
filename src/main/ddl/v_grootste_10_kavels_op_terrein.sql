@@ -12,10 +12,8 @@ CREATE OR REPLACE VIEW "IBIS".v_grootste_10_kavels_op_terrein AS
             v_actuele_kavels.datummutatie,
             v_actuele_kavels.terreinid,
             v_actuele_kavels.status,
-            v_actuele_kavels.milieuwet,
             v_actuele_kavels.uitgegevenaan,
             v_actuele_kavels.eerstejaaruitgifte,
-            v_actuele_kavels.faseveroudering,
             v_actuele_kavels.gemeentenaam,
             v_actuele_kavels.geom,
             row_number() OVER (PARTITION BY v_actuele_kavels.terreinid ORDER BY st_area(v_actuele_kavels.geom)::numeric DESC) AS row_id
