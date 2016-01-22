@@ -36,6 +36,7 @@ CREATE OR REPLACE VIEW "IBIS".v_factsheet_terrein_info AS
     bedrijventerrein.o_maxhuur,
     bedrijventerrein.o_maxverkoop,
     (select waarde from codes_milieuwet where id=bedrijventerrein.o_milieuwet_code) as o_milieuwet, 
+    bedrijventerrein.o_milieuwet_code,
     bedrijventerrein.o_milieuzone,
     bedrijventerrein.o_externebereikbaarheid,
     bedrijventerrein.o_minhuur,
