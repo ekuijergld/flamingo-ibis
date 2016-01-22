@@ -30,30 +30,6 @@ SET default_tablespace = '';
 
 SET default_with_oids = true;
 
---
--- TOC entry 184 (class 1259 OID 5499632)
--- Name: EcMO_Leegstand; Type: TABLE; Schema: IBIS; Owner: ibis; Tablespace: 
---
-
-CREATE TABLE "EcMO_Leegstand" (
-    pkid bigint NOT NULL,
-    datum character varying(20),
-    wijziging character varying(255),
-    aanbodtype character varying(255),
-    soort character varying(255),
-    gebouwnaam character varying(255),
-    straat character varying(255),
-    huisnummer character varying(255),
-    naam character varying(255),
-    url character varying(255),
-    shorturl character varying(255),
-    plaats character varying(255),
-    opterrein character varying(10),
-    geom public.geometry(Point,28992)
-);
-
-
-ALTER TABLE "EcMO_Leegstand" OWNER TO ibis;
 
 SET default_with_oids = false;
 
@@ -154,10 +130,8 @@ CREATE TABLE bedrijvenkavels (
     datummutatie date NOT NULL,
     terreinid integer,
     status character varying(70),
-    milieuwet character varying(50),
     uitgegevenaan character varying(255),
     eerstejaaruitgifte integer,
-    faseveroudering character varying(100),
     gemeentenaam character varying(100),
     geom public.geometry(Polygon,28992),
     gt_key bigint NOT NULL,
@@ -230,7 +204,7 @@ CREATE TABLE bedrijventerrein (
     o_internet character varying(100),
     o_maxhuur bigint,
     o_maxverkoop bigint,
-    o_milieuwet character varying(55),
+    o_milieuwet_code bigint,
     o_milieuzone character varying(20),
     o_externebereikbaarheid character varying(20),
     o_minhuur bigint,
@@ -318,6 +292,19 @@ ALTER SEQUENCE code_id_seq OWNED BY code.id;
 
 
 SET default_with_oids = true;
+
+-- extra tabel codes_milieuwet
+--
+-- Name: codes_milieuwet; Type: TABLE; Schema: IBIS; Owner: ibis; Tablespace: 
+--
+
+CREATE TABLE codes_milieuwet (
+    id integer NOT NULL,
+    waarde character varying(100) NOT NULL,
+);
+
+
+ALTER TABLE codes_milieuwet OWNER TO ibis;
 
 --
 -- TOC entry 192 (class 1259 OID 5499666)
