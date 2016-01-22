@@ -36,7 +36,7 @@ CREATE OR REPLACE VIEW "IBIS".v_component_ibis_report AS
     bedrijventerrein.o_internet,
     bedrijventerrein.o_maxhuur,
     bedrijventerrein.o_maxverkoop,
-    bedrijventerrein.o_milieuwet,
+    (select waarde from codes_milieuwet where id=bedrijventerrein.o_milieuwet_code) as o_milieuwet, 
     bedrijventerrein.o_milieuzone,
     bedrijventerrein.o_externebereikbaarheid,
     bedrijventerrein.o_minhuur,
