@@ -3,7 +3,9 @@
 -- DROP VIEW "IBIS".v_totaal_bedrijven_en_medewerkers_op_terrein;
 
 CREATE OR REPLACE VIEW "IBIS".v_totaal_bedrijven_en_medewerkers_op_terrein AS
- SELECT bedrijventerrein.ibis_id AS terreinid,
+ SELECT
+    bedrijventerrein.gt_pkey,
+    bedrijventerrein.ibis_id AS terreinid,
     v_totaal_bedrijven_en_medewerkers_op_rin_nr.rin_nr,
     v_totaal_bedrijven_en_medewerkers_op_rin_nr.bedrijven,
     v_totaal_bedrijven_en_medewerkers_op_rin_nr.medewerkers
