@@ -69,7 +69,7 @@ CREATE OR REPLACE VIEW "IBIS".v_factsheet_terrein_info AS
     v_gemeente_en_regio_envelopes.provincie,
     v_totaal_bedrijven_en_medewerkers_op_rin_nr.bedrijven AS aantal_bedrijven,
     v_totaal_bedrijven_en_medewerkers_op_rin_nr.medewerkers AS aantal_werkzame_personen
-   FROM bedrijventerrein
+   FROM v_actuele_terreinen bedrijventerrein
      LEFT JOIN owner ON bedrijventerrein.ibis_id = owner.terreinid
      LEFT JOIN v_terrein_oppervlakte ON v_terrein_oppervlakte.gt_pkey = bedrijventerrein.gt_pkey
      LEFT JOIN v_gemeente_en_regio_envelopes ON bedrijventerrein.gemeente_naam = v_gemeente_en_regio_envelopes.naam
